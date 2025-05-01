@@ -174,7 +174,8 @@ main {
   border-color: var(--primary-color-darkest-light);
 }
 
-.hoverable > h2 {
+.hoverable > h2,
+.project-content > h2 {
   font-size: 1.17rem;
   margin-bottom: 5px;
   font-weight: 700;
@@ -190,7 +191,8 @@ main {
   font-weight: 100;
 }
 .hoverable > p,
-.hoverable > ul > li {
+.hoverable > ul > li,
+.project-content > p {
   font-size: 0.9rem;
   margin: 15px 0;
   font-weight: 300;
@@ -200,9 +202,9 @@ main {
 
 .with-grid {
   display: grid;
-  /* max-width: 80%; */
-  /* justify-self: center; */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+  max-width: 1400px;
+  justify-self: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   flex-wrap: wrap;
   gap: 2rem;
   padding: 40px 150px 120px;
@@ -251,37 +253,22 @@ main {
 /* PROJECTS */
 .projects {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 40px 80px 120px;
+  font-size: 16px;
 }
 
 .project {
-  padding: 0px 30px 300px;
+  padding: 0px 30px 150px;
 }
 
 .preview-container {
-  display: flex;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.preview-container iframe {
-  width: 1440px;
-  height: 900px;
-  border: none;
-  position: absolute;
-  top: 0;
-  transform: scale(0.25);
-  transform-origin: top center;
-  transition: transform 4s ease;
+  height: 200px;
 }
 
 .project-links {
   display: flex;
   padding: 10px 0 20px;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .link-btn {
@@ -299,8 +286,12 @@ main {
 }
 
 /* CERTIFICATIONS */
+.certifications {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
 .certification {
-  padding: 20px 0;
+  padding: 25px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
