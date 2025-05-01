@@ -9,8 +9,7 @@ function About() {
         make life smoother and smarter.
         <br />
         Outside of coding, you’ll find me exploring nature, being a foodie,
-        journalling or planning my next big idea over a great
-        playlist.
+        journalling or planning my next big idea over a great playlist.
         <br />
         I'm passionate about making tech more accessible and empowering
         businesses with data-driven solutions.
