@@ -31,11 +31,6 @@ body {
   display: none;
 }
 
-.svg {
-  width: 100px;
-  height: 75px;
-}
-
 main {
   box-sizing: border-box;
   margin: 0;
@@ -43,30 +38,38 @@ main {
   font-family: var(--font-family);
 }
 
-.intro {
+/* MULTIPLE ELEMENTS AT ONCE */
+.education,
+.contact {
   display: flex;
   justify-content: center;
-  height: 80vh;
-  align-items: center;
-  padding-top: 100px;
 }
 
-.intro-name {
-  font-size: 45px;
-  font-weight: 900;
-  margin-bottom: 10px;
-  line-height: 5rem;
+#about,
+#education,
+#projects,
+#skills,
+#experiences,
+#languages,
+#certifications {
+  scroll-margin-top: 100px;
 }
 
-.intro-title {
-  font-weight: 400;
+.about,
+.education,
+.skills,
+.contact {
+  margin: 40px 0 120px;
 }
 
-.header {
-  margin-bottom: 80px;
-  height: 100vh;
+/* SVGs */
+
+.svg {
+  width: 100px;
+  height: 75px;
 }
 
+/* NAVIGATION */
 .nav {
   display: flex;
   position: fixed;
@@ -75,22 +78,6 @@ main {
   background: var(--primary-color-pale);
   z-index: 1;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.p-start,
-.sun {
-  display: flex;
-  align-items: center;
-}
-
-.p-start {
-  padding: 0 10px;
-  margin-left: 20px;
-}
-
-.sun {
-  width: 40px;
-  margin-right: 20px;
 }
 
 .nav ul {
@@ -120,18 +107,108 @@ main {
   transition: all 0.1s ease-in-out;
 }
 
+/* MATINI LOGO & LIGHT-MODE SVG */
+.sun {
+  width: 40px;
+  margin-right: 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
 .matini-logo {
   width: 90px;
-  margin: auto 0;
   margin-left: 20px;
 }
 
+/* HEADER ELEMENTS */
+.header {
+  margin-bottom: 80px;
+  height: 100vh;
+}
 .matini {
   height: 250px;
   margin: 0 auto;
   margin-bottom: 20px;
   border-radius: 50%;
 }
+
+.intro {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.intro-name {
+  font-size: 45px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  line-height: 5rem;
+}
+
+.intro-title {
+  font-weight: 400;
+}
+
+/* ABOUT */
+
+.about {
+  padding: 0 150px;
+}
+
+/* HOVERABLE - All purple tiles */
+
+.hoverable {
+  border: 0.5px solid transparent;
+  border-radius: 5px;
+  background: var(--primary-color-light);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 6px;
+  padding: 20px 30px;
+  text-align: left;
+}
+.hoverable:hover {
+  border-color: var(--primary-color-darkest-light);
+}
+
+.hoverable > h2 {
+  font-size: 1.17rem;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.hoverable > h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.hoverable > h4 {
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  font-weight: 100;
+}
+.hoverable > p,
+.hoverable > ul > li {
+  font-size: 0.9rem;
+  margin: 15px 0;
+  font-weight: 300;
+}
+
+/* GRID SECTIONS - Experiences, Projects, Certifications, Languages */
+
+.with-grid {
+  display: grid;
+  /* max-width: 80%; */
+  /* justify-self: center; */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 40px 150px 120px;
+}
+
+/* SKILLS */
 
 .skills {
   background-color: #dfdbe5;
@@ -171,115 +248,68 @@ main {
   align-items: center;
 }
 
-.about {
-  padding: 0 150px;
-}
-
-.hoverable {
-  border: 0.5px solid transparent;
-  border-radius: 5px;
-  background: var(--primary-color-light);
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 6px;
-}
-.hoverable:hover {
-  border-color: var(--primary-color-darkest-light);
-}
-
-.education,
-.contact {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0 80px;
-}
-
-.about,
-.skills {
-  margin: 40px 0 80px;
-}
-
-.hoverable {
-  padding: 20px 30px;
-  text-align: left;
-}
-
-.hoverable > h2 {
-  font-size: 1.17rem;
-  margin-bottom: 5px;
-  font-weight: 700;
-}
-.hoverable > h3 {
-  font-size: 1.1rem;
-  margin-bottom: 5px;
-  font-weight: 500;
-}
-.hoverable > h4 {
-  font-size: 0.85rem;
-  margin-bottom: 5px;
-  font-weight: 100;
-}
-.hoverable > p,
-.hoverable > ul > li {
-  font-size: 0.9rem;
-  margin: 15px 0;
-  font-weight: 300;
-}
-
-.hoverable > a {
-  border: 1px solid var(--primary-color-dark);
-  text-decoration: none;
-  background-color: var(--secondary-color);
-  padding: 10px 20px;
-  border-radius: 25px;
-  color: inherit;
-}
-
-.hoverable > a:hover {
-  background-color: var(--primary-color-dark);
-  color: var(--secondary-color);
-}
-
-.with-grid {
-  display: grid;
-  /* max-width: 80%; */
-  /* justify-self: center; */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 50px 150px;
-}
-
-.experience {
-  padding: 20px 30px;
-}
-
-.project {
-  padding: 0px 30px 250px;
-}
-
-.project iframe {
-  width: 100%;
-  height: 80%;
-}
-
+/* PROJECTS */
 .projects {
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
 }
 
+.project {
+  padding: 0px 30px 180px;
+}
+
+.preview-container {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.preview-container iframe {
+  width: 1440px;
+  height: 900px;
+  border: none;
+  position: absolute;
+  top: 0;
+  transform: scale(0.25);
+  transform-origin: top center;
+  transition: transform 4s ease;
+}
+
+.project-links {
+  display: flex;
+  padding: 10px 0 20px;
+  justify-content: space-around;
+}
+
+.link-btn {
+  border: 1px solid var(--primary-color-dark);
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: inherit;
+}
+
+.link-btn:hover {
+  background-color: var(--primary-color-dark);
+  color: var(--secondary-color);
+}
+
 /* CERTIFICATIONS */
 .certification {
-  /* padding: 30px; */
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .certification > img {
-  /* background: red; */
   margin-bottom: 15px;
 }
 
 .certifications > .certification:nth-of-type(1) > img {
-  /* width: 200px; */
   object-fit: cover;
 }
 

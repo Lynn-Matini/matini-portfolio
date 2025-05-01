@@ -6,25 +6,28 @@ function Header() {
   return (
     <header className="header-item">
       <nav className="nav">
-        <img
-          src="https://see.fontimg.com/api/rf5/8Ox1B/ZWMxNTNiYjgxYzJhNGNjM2I0NjdkNDRlOTU1NWIyZWIudHRm/bWF0aW5p/sacrifice-demo.png?r=fs&h=85&w=1303&fg=000000&bg=FFFFFF&tb=1&s=65"
-          className="matini-logo"
-        />
+        <a href="#home" className="logo-container">
+          <img
+            src="https://see.fontimg.com/api/rf5/8Ox1B/ZWMxNTNiYjgxYzJhNGNjM2I0NjdkNDRlOTU1NWIyZWIudHRm/bWF0aW5p/sacrifice-demo.png?r=fs&h=85&w=1303&fg=000000&bg=FFFFFF&tb=1&s=65"
+            alt="Matini's Logo"
+            className="matini-logo"
+          />
+        </a>
         <ul className="nav-list">
-          <li>
-            <a href="#home">Home</a>
-          </li>
           <li>
             <a href="#about">About</a>
           </li>
           <li>
-            <a href="#skills">Education</a>
+            <a href="#education">Education</a>
           </li>
           <li>
-            <a href="#experiences">Projects</a>
+            <a href="#skills">Skills</a>
           </li>
           <li>
-            <a href="#projects">Experience</a>
+            <a href="#experiences">Experience</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
           </li>
           <li>
             <a href="#contact">Contact</a>

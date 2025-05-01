@@ -22,7 +22,7 @@ const certifications = [
     logo: scrimba,
     issuer: 'Scrimba',
     issueDate: '2025',
-    title: 'The AI Engineer Path',
+    title: 'AI Engineer Path',
   },
   { id: 3, logo: kaggle, issuer: 'Kaggle', issueDate: '2025', title: 'Python' },
   {
@@ -30,7 +30,7 @@ const certifications = [
     logo: react,
     issuer: 'Andela',
     issueDate: '2023',
-    title: 'React Learning Program',
+    title: 'React',
   },
 ];
 
@@ -88,31 +88,37 @@ const projects = [
     id: 1,
     title: 'Subscription Management System',
     description: 'A personal portfolio website built using React and CSS.',
-    link: 'subscription-management-sys.vercel.app',
+    gitHubLink:
+      'https://github.com/Avalanche-Team1-Africa/Subscription-Management-System',
+    webLink: 'https://subscription-management-sys.vercel.app/',
   },
   {
     id: 2,
     title: 'Pollyglot',
     description: 'A personal portfolio website built using React and CSS.',
-    link: '#',
+    gitHubLink: '#',
+    webLink: '#',
   },
   {
     id: 3,
     title: 'Dodgy Stock Market Predictor',
     description: 'A personal portfolio website built using React and CSS.',
-    link: '#',
+    gitHubLink: '#',
+    webLink: '#',
   },
   {
     id: 4,
     title: "Matini's Portfolio",
     description: 'A personal portfolio website built using React and CSS.',
-    link: '#',
+    gitHubLink: 'https://github.com/Lynn-Matini/matini-portfolio',
+    webLink: '#',
   },
   {
     id: 5,
     title: 'Wema Insurance Management System',
     description: 'A personal portfolio website built using React and CSS.',
-    link: '#',
+    gitHubLink: 'https://github.com/Lynn-Matini/WemaIMS-reactSQL',
+    webLink: '#',
   },
 ];
 

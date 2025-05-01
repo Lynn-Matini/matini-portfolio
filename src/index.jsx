@@ -27,13 +27,13 @@ export function App() {
       <section className="header" id="home">
         <Header />
       </section>
-      <h1>About Matini</h1>
+      <h1 id="about">About Matini</h1>
       <section className="about">
         <About />
       </section>
 
-      <h1>Education</h1>
-      <section className="education" id="education">
+      <h1 id="education">Education</h1>
+      <section className="education">
         {education.map((ed) => {
           return (
             <Education
@@ -47,8 +47,8 @@ export function App() {
         })}
       </section>
 
-      <h2>Technical Skills</h2>
-      <section className="skills" id="skills">
+      <h2 id="skills">Technical Skills</h2>
+      <section className="skills">
         <div className="skills-carousel-track">
           {[...skills, ...skills].map((s) => {
             return (
@@ -63,8 +63,8 @@ export function App() {
         </div>
       </section>
 
-      <h1>Experience</h1>
-      <section className="experiences with-grid" id="experiences">
+      <h1 id="experiences">Experience</h1>
+      <section className="experiences with-grid">
         {experience.map((exp) => {
           return (
             <Experience
@@ -78,15 +78,16 @@ export function App() {
         })}
       </section>
 
-      <h1>Featured Projects</h1>
-      <section className="projects with-grid" id="projects">
+      <h1 id="projects">Featured Projects</h1>
+      <section className="projects with-grid">
         {projects.map((p) => {
           return (
             <Projects
               key={p.id}
               title={p.title}
               description={p.description}
-              link={p.link}
+              webLink={p.webLink}
+              gitHubLink={p.gitHubLink}
             />
           );
         })}
@@ -120,8 +121,8 @@ export function App() {
         })}
       </section>
 
-      <h1>Contact</h1>
-      <section className="contact" id="contact">
+      <h1 id="contact">Contact</h1>
+      <section className="contact">
         <Contact />
       </section>
 
