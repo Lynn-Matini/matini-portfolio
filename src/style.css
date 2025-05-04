@@ -6,7 +6,6 @@
   --primary-color-dark: #a0a4ff;
   --primary-color-darker: #7a7eff;
   --primary-color-darkest: #5458ff;
-  --primary-color-darkest-light: #5458ff;
   --secondary-color: #f0f0f0;
   --text-color: #222222;
   --font-family: 'Cascadia Code', sans-serif;
@@ -22,7 +21,7 @@ body {
   background: var(--primary-color-lighter);
   overflow-x: hidden;
   line-height: 1.6;
-  font-size: 16px;
+  font-size: 0.8rem;
   color: var(--text-color);
   scroll-behavior: smooth;
 }
@@ -51,8 +50,11 @@ main {
 #skills,
 #experiences,
 #languages,
-#certifications {
+#certifications,
+#contact {
   scroll-margin-top: 100px;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
 }
 
 .about,
@@ -97,20 +99,31 @@ main {
 }
 
 .nav > ul > li:hover {
-  color: var(--primary-color-darkest-light);
+  color: var(--primary-color-darkest);
 }
 
 .nav-list li a.active {
-  color: var(--primary-color-darkest-light);
+  color: var(--primary-color-darkest);
   font-weight: bold;
-  border-bottom: 2px solid var(--primary-color-darkest-light);
+  border-bottom: 2px solid var(--primary-color-darkest);
   transition: all 0.1s ease-in-out;
 }
 
 /* MATINI LOGO & LIGHT-MODE SVG */
+.rightnav-icons {
+  /* background: orange; */
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
 .sun {
   width: 40px;
-  margin-right: 20px;
+}
+
+.hamburger {
+  width: 25px;
+  display: none;
 }
 
 .logo-container {
@@ -157,7 +170,7 @@ main {
 /* ABOUT */
 
 .about {
-  padding: 0 150px;
+  padding: 0 2rem;
 }
 
 /* HOVERABLE - All purple tiles */
@@ -171,7 +184,7 @@ main {
   text-align: left;
 }
 .hoverable:hover {
-  border-color: var(--primary-color-darkest-light);
+  border-color: var(--primary-color-darkest);
 }
 
 .hoverable > h2,
@@ -204,11 +217,14 @@ main {
   display: grid;
   max-width: 1400px;
   justify-self: center;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  padding: 40px 150px 120px;
+  margin: 0 auto;
 }
+
+/* .with-grid > * {
+  box-sizing: border-box;
+} */
 
 /* SKILLS */
 
@@ -250,15 +266,19 @@ main {
   align-items: center;
 }
 
+/* EXPERIENCES */
+.experiences {
+  padding: 0 7rem;
+}
+
 /* PROJECTS */
 .projects {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding: 40px 80px 120px;
-  font-size: 16px;
+  padding: 0 5rem;
 }
 
 .project {
-  padding: 0px 30px 150px;
+  padding: 0px 30px 80px;
 }
 
 .preview-container {
@@ -288,6 +308,7 @@ main {
 /* CERTIFICATIONS */
 .certifications {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 0 7rem;
 }
 
 .certification {
@@ -303,6 +324,12 @@ main {
 
 .certifications > .certification:nth-of-type(1) > img {
   object-fit: cover;
+}
+
+/* LANGUAGES */
+.languages {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 0 7rem;
 }
 
 /* Contact */
@@ -321,13 +348,13 @@ textarea {
   padding: 20px;
   border-radius: 10px;
   background: none;
-  border: 1px solid var(--primary-color-darkest-light);
+  border: 1px solid var(--primary-color-darkest);
 }
 
 .submit-btn {
   padding: 10px 20px;
   border-radius: 10px;
-  border: 1px solid var(--primary-color-darkest-light);
+  border: 1px solid var(--primary-color-darkest);
   background: var(--primary-color-pale);
 }
 
@@ -343,4 +370,54 @@ footer {
   padding: 15px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   font-weight: 500;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+@media (max-width: 610px) {
+  .education,
+  .experiences,
+  .projects,
+  .certifications,
+  .languages {
+    padding: 0 2rem;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: 20px;
+    padding: 20px 0;
+  }
+  .nav ul {
+    display: none;
+  }
+}
+
+@media (min-width: 611px) and (max-width: 800px) {
+  .nav ul {
+    font-size: 0.7rem;
+  }
+  #experiences,
+  #projects,
+  #certifications,
+  #languages,
+  #contact {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
+  .experiences,
+  .projects,
+  .certifications,
+  .languages {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 900px) {
+  .about {
+    padding: 0 2rem;
+  }
+  .nav ul {
+    font-size: 0.8rem;
+  }
 }
