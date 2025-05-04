@@ -111,7 +111,6 @@ main {
 
 /* MATINI LOGO & LIGHT-MODE SVG */
 .rightnav-icons {
-  /* background: orange; */
   display: flex;
   justify-content: space-between;
   margin-right: 20px;
@@ -222,10 +221,6 @@ main {
   margin: 0 auto;
 }
 
-/* .with-grid > * {
-  box-sizing: border-box;
-} */
-
 /* SKILLS */
 
 .skills {
@@ -334,7 +329,7 @@ main {
 
 /* Contact */
 .contact {
-  min-width: 40%;
+  margin-bottom: 80px;
 }
 
 .contact-item {
@@ -375,6 +370,10 @@ footer {
 /* MEDIA QUERIES FOR RESPONSIVENESS */
 
 @media (max-width: 610px) {
+  .nav {
+    width: 100vw;
+  }
+
   .education,
   .experiences,
   .projects,
