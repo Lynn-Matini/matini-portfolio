@@ -1,8 +1,15 @@
+import { useState } from 'preact/hooks';
 import Matini from '../assets/matini2.png';
 import Sun from '../assets/sun.svg';
 // import Matini from './assets/matini-removedBG.png';
+import Hamburger from '../assets/hamburger.svg';
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <header className="header-item">
       <nav className="nav">
@@ -33,7 +40,10 @@ function Header() {
             <a href="#contact">Contact</a>
           </li>
         </ul>
-        <img src={Sun} className="sun" />
+        <div className="rightnav-icons">
+          <img src={Sun} className="sun" />
+          <img src={Hamburger} className="hamburger" onClick={toggleMenu} />
+        </div>
       </nav>
       <div className="intro">
         <div>

@@ -93,7 +93,7 @@ export function App() {
         })}
       </section>
 
-      <h1>Certifications</h1>
+      <h1 id="certifications">Certifications</h1>
       <section className="certifications with-grid">
         {certifications.map((c) => {
           return (
@@ -108,7 +108,7 @@ export function App() {
         })}
       </section>
 
-      <h1>Languages</h1>
+      <h1 id="languages">Languages</h1>
       <section className="languages with-grid">
         {languages.map((l) => {
           return (
