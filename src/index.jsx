@@ -1,4 +1,5 @@
 import { render } from 'preact';
+// import { ThemeProvider } from './hooks/ThemeContext';
 // import { lazy, Suspense } from 'preact/compat';
 // const About = lazy(() => import('./components/About'));
 
@@ -22,44 +23,38 @@ import {
 import Header from './components/Header';
 
 export function App() {
+  function handleScroll(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   return (
     <main>
       <section className="header" id="home">
-        <Header />
+        <Header handleScroll={handleScroll} />
       </section>
       <h1 id="about">About Matini</h1>
       <section className="about">
         <About />
       </section>
+      {console.log(document.documentElement)}
 
       <h1 id="education">Education</h1>
       <section className="education">
         {education.map((ed) => {
-          return (
-            <Education
-              key={ed.id}
-              degree={ed.degree}
-              school={ed.school}
-              graduation={ed.graduation}
-              description={ed.description}
-            />
-          );
+          return <Education key={ed.id} {...ed} />;
         })}
       </section>
 
       <h2 id="skills">Technical Skills</h2>
       <section className="skills">
-        <div className="skills-carousel-track">
-          {[...skills, ...skills].map((s) => {
-            return (
-              <Skills
-                key={s.id}
-                src={s.src}
-                skill={s.skill}
-                proficiency={s.proficiency}
-              />
-            );
-          })}
+        <div className="carousel-wrapper">
+          <div className="carousel-track">
+            {[...skills, ...skills].map((s) => {
+              return <Skills key={s.id} {...s} />;
+            })}
+          </div>
         </div>
       </section>
 
@@ -81,43 +76,21 @@ export function App() {
       <h1 id="projects">Featured Projects</h1>
       <section className="projects with-grid">
         {projects.map((p) => {
-          return (
-            <Projects
-              key={p.id}
-              title={p.title}
-              description={p.description}
-              webLink={p.webLink}
-              gitHubLink={p.gitHubLink}
-            />
-          );
+          return <Projects key={p.id} {...p} />;
         })}
       </section>
 
       <h1 id="certifications">Certifications</h1>
       <section className="certifications with-grid">
         {certifications.map((c) => {
-          return (
-            <Certifications
-              key={c.id}
-              logo={c.logo}
-              issuer={c.issuer}
-              issueDate={c.issueDate}
-              title={c.title}
-            />
-          );
+          return <Certifications key={c.id} {...c} />;
         })}
       </section>
 
       <h1 id="languages">Languages</h1>
       <section className="languages with-grid">
         {languages.map((l) => {
-          return (
-            <Languages
-              key={l.id}
-              language={l.language}
-              proficiency={l.proficiency}
-            />
-          );
+          return <Languages key={l.id} {...l} />;
         })}
       </section>
 
@@ -133,4 +106,9 @@ export function App() {
   );
 }
 
-render(<App />, document.getElementById('app'));
+render(
+  // <ThemeProvider>
+  <App />,
+  // </ThemeProvider>
+  document.getElementById('app')
+);

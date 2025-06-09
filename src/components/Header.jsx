@@ -1,11 +1,14 @@
 import { useState } from 'preact/hooks';
+// import { useTheme } from '../hooks/ThemeContext';
+
 import Matini from '../assets/matini2.png';
 import Sun from '../assets/sun.svg';
 // import Matini from './assets/matini-removedBG.png';
 import Hamburger from '../assets/hamburger.svg';
 
-function Header() {
+function Header({ handleScroll }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const { darkMode, toggleTheme } = useTheme();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -21,27 +24,16 @@ function Header() {
           />
         </a>
         <ul className="nav-list">
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#education">Education</a>
-          </li>
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#experiences">Experience</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+          <li onClick={() => handleScroll('about')}>About</li>
+          <li onClick={() => handleScroll('education')}>Education</li>
+          <li onClick={() => handleScroll('skills')}>Skills</li>
+          <li onClick={() => handleScroll('experiences')}>Experience</li>
+          <li onClick={() => handleScroll('projects')}>Projects</li>
+          <li onClick={() => handleScroll('contact')}>Contact</li>
         </ul>
         <div className="rightnav-icons">
-          <img src={Sun} className="sun" />
+          {}
+          <img src={Sun} className="sun" onClick={() => alert('Clicked!')} />
           <img src={Hamburger} className="hamburger" onClick={toggleMenu} />
         </div>
       </nav>
