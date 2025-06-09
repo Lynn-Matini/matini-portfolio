@@ -49,8 +49,8 @@ main {
 #projects,
 #skills,
 #experiences,
-#languages,
 #certifications,
+#languages,
 #contact {
   scroll-margin-top: 100px;
   margin-top: 5rem;
@@ -118,6 +118,7 @@ main {
 
 .sun {
   width: 40px;
+  cursor: pointer;
 }
 
 .hamburger {
@@ -167,13 +168,11 @@ main {
 }
 
 /* ABOUT */
-
 .about {
   padding: 0 2rem;
 }
 
 /* HOVERABLE - All purple tiles */
-
 .hoverable {
   border: 0.5px solid transparent;
   border-radius: 5px;
@@ -211,7 +210,6 @@ main {
 }
 
 /* GRID SECTIONS - Experiences, Projects, Certifications, Languages */
-
 .with-grid {
   display: grid;
   max-width: 1400px;
@@ -222,7 +220,6 @@ main {
 }
 
 /* SKILLS */
-
 .skills {
   background-color: #dfdbe5;
   background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -230,24 +227,32 @@ main {
   width: 100%;
 }
 
-.skills-carousel-track {
-  display: flex;
-  animation: scroll-left 10s linear infinite;
-  width: max-content;
-  animation-delay: 0.1s;
+.carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
-.skills-carousel-track > * {
+.carousel-track {
+  display: flex;
+  animation: scroll-left 10s linear infinite;
+  width: fit-content;
+}
+
+.carousel-track > * {
   margin-right: 70px;
 }
 
 @keyframes scroll-left {
-  100% {
+  from {
+    transform: translateX(0);
+  }
+  to {
     transform: translateX(-50%);
   }
 }
 
-.skills-carousel-track:hover {
+.carousel-track:hover {
   /* animation-play-state: paused; */
 }
 
@@ -368,12 +373,7 @@ footer {
 }
 
 /* MEDIA QUERIES FOR RESPONSIVENESS */
-
 @media (max-width: 610px) {
-  .nav {
-    width: 100vw;
-  }
-
   .education,
   .experiences,
   .projects,
