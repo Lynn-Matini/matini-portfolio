@@ -18,6 +18,8 @@ function Header({ handleScroll }) {
       <nav className="nav">
         <a href="#home" className="logo-container">
           <img
+            width="90px"
+            height="25px"
             src="https://see.fontimg.com/api/rf5/8Ox1B/ZWMxNTNiYjgxYzJhNGNjM2I0NjdkNDRlOTU1NWIyZWIudHRm/bWF0aW5p/sacrifice-demo.png?r=fs&h=85&w=1303&fg=000000&bg=FFFFFF&tb=1&s=65"
             alt="Matini's Logo"
             className="matini-logo"
@@ -32,14 +34,24 @@ function Header({ handleScroll }) {
           <li onClick={() => handleScroll('contact')}>Contact</li>
         </ul>
         <div className="rightnav-icons">
-          {}
-          <img src={Sun} className="sun" onClick={() => alert('Clicked!')} />
-          <img src={Hamburger} className="hamburger" onClick={toggleMenu} />
+          <img
+            src={Sun}
+            width="40px"
+            height="66px"
+            className="sun"
+            onClick={() => alert('Clicked!')}
+          />
+          <img
+            src={Hamburger}
+            width="25px"
+            className="hamburger"
+            onClick={toggleMenu}
+          />
         </div>
       </nav>
       <div className="intro">
         <div>
-          <img src={Matini} className="matini" />
+          <img width="230px" height="230px" src={Matini} className="matini" />
           <p className="intro-name">Lynn Achando</p>
           <h2 className="intro-title">Frontend Developer & Data Analyst</h2>
         </div>

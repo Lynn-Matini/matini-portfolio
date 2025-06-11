@@ -1,7 +1,7 @@
 function Skills(props) {
   return (
     <div className="skill">
-      <img src={props.src} alt={props.skill} className="svg" />
+      <img width="100px" height="75px" src={props.src} alt={props.skill} />
     </div>
   );
 }
