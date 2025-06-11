@@ -1,7 +1,7 @@
 function Certifications(props) {
   return (
     <div className="certification hoverable">
-      <img src={props.logo} className="svg" />
+      <img loading="lazy" width="100px" height="50px" src={props.logo} />
       <h2>{props.title}</h2>
       <h4>
         {props.issuer}, {props.issueDate}

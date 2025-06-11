@@ -21,6 +21,7 @@ import {
   skills,
 } from './data.js';
 import Header from './components/Header';
+import FadeInSection from './components/FadeInSection';
 
 export function App() {
   function handleScroll(id) {
@@ -34,21 +35,25 @@ export function App() {
       <section className="header" id="home">
         <Header handleScroll={handleScroll} />
       </section>
-      <h1 id="about">About Matini</h1>
-      <section className="about">
+      <h1 id="about" className="fade-in-on-scroll">
+        About Matini
+      </h1>
+      <section className="about fade-in-on-scroll">
         <About />
       </section>
       {console.log(document.documentElement)}
-
-      <h1 id="education">Education</h1>
-      <section className="education">
+      <h1 id="education" className="fade-in-on-scroll">
+        Education
+      </h1>
+      <section className="education fade-in-on-scroll">
         {education.map((ed) => {
           return <Education key={ed.id} {...ed} />;
         })}
       </section>
-
-      <h2 id="skills">Technical Skills</h2>
-      <section className="skills">
+      <h2 id="skills" className="fade-in-on-scroll">
+        Technical Skills
+      </h2>
+      <section className="skills fade-in-on-scroll">
         <div className="carousel-wrapper">
           <div className="carousel-track">
             {[...skills, ...skills].map((s) => {
@@ -57,9 +62,10 @@ export function App() {
           </div>
         </div>
       </section>
-
-      <h1 id="experiences">Experience</h1>
-      <section className="experiences with-grid">
+      <h1 id="experiences" className="fade-in-on-scroll">
+        Experience
+      </h1>
+      <section className="experiences with-grid fade-in-on-scroll">
         {experience.map((exp) => {
           return (
             <Experience
@@ -72,33 +78,36 @@ export function App() {
           );
         })}
       </section>
-
-      <h1 id="projects">Featured Projects</h1>
-      <section className="projects with-grid">
+      <h1 id="projects" className="fade-in-on-scroll">
+        Featured Projects
+      </h1>
+      <section className="projects with-grid fade-in-on-scroll">
         {projects.map((p) => {
           return <Projects key={p.id} {...p} />;
         })}
       </section>
-
-      <h1 id="certifications">Certifications</h1>
-      <section className="certifications with-grid">
+      <h1 id="certifications" className="fade-in-on-scroll">
+        Certifications
+      </h1>
+      <section className="certifications with-grid fade-in-on-scroll">
         {certifications.map((c) => {
           return <Certifications key={c.id} {...c} />;
         })}
       </section>
-
-      <h1 id="languages">Languages</h1>
-      <section className="languages with-grid">
+      <h1 id="languages" className="fade-in-on-scroll">
+        Languages
+      </h1>
+      <section className="languages with-grid fade-in-on-scroll">
         {languages.map((l) => {
           return <Languages key={l.id} {...l} />;
         })}
       </section>
-
-      <h1 id="contact">Contact</h1>
-      <section className="contact">
+      <h1 id="contact" className="fade-in-on-scroll">
+        Contact
+      </h1>
+      <section className="contact fade-in-on-scroll">
         <Contact />
       </section>
-
       <footer>
         <p>Made by Matini with ❤️</p>
       </footer>
@@ -108,7 +117,9 @@ export function App() {
 
 render(
   // <ThemeProvider>
-  <App />,
+  <FadeInSection>
+    <App />
+  </FadeInSection>,
   // </ThemeProvider>
   document.getElementById('app')
 );
