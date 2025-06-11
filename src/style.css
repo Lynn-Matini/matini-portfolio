@@ -144,6 +144,8 @@ main {
 
 .matini-logo {
   margin-left: 20px;
+  display: flex;
+  align-items: center;
 }
 
 /* HEADER ELEMENTS */
