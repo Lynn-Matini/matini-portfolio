@@ -3,8 +3,8 @@ import { useState } from 'preact/hooks';
 
 import Matini from '../assets/matini2.png';
 import Sun from '../assets/sun.svg';
-// import Matini from './assets/matini-removedBG.png';
 import Hamburger from '../assets/hamburger.svg';
+import MatiniLogo from '../assets/matini-font2.png';
 
 function Header({ handleScroll }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,15 +16,15 @@ function Header({ handleScroll }) {
   return (
     <header className="header-item">
       <nav className="nav">
-        <a href="#home" className="logo-container">
+        <div className="matini-logo">
           <img
             width="90px"
             height="25px"
-            src="https://see.fontimg.com/api/rf5/8Ox1B/ZWMxNTNiYjgxYzJhNGNjM2I0NjdkNDRlOTU1NWIyZWIudHRm/bWF0aW5p/sacrifice-demo.png?r=fs&h=85&w=1303&fg=000000&bg=FFFFFF&tb=1&s=65"
+            src={MatiniLogo}
             alt="Matini's Logo"
-            className="matini-logo"
+            onClick={() => handleScroll('home')}
           />
-        </a>
+        </div>
         <ul className="nav-list">
           <li onClick={() => handleScroll('about')}>About</li>
           <li onClick={() => handleScroll('education')}>Education</li>
