@@ -15,6 +15,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* overflow-x: hidden; */
 }
 
 body {
@@ -41,7 +42,9 @@ main {
 .fade-in-on-scroll {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 .fade-in-on-scroll.visible {
   animation: fadeInUp 0.8s ease-out forwards;
@@ -74,24 +77,25 @@ main {
 #contact {
   scroll-margin-top: 100px;
   margin-top: 6rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .about,
 .education,
+.projects,
 .skills,
 .contact {
-  margin: 40px 0 120px;
+  margin: 1rem 0 120px;
 }
 
 /* NAVIGATION */
 .nav {
   display: flex;
-  position: fixed;
-  width: 100%;
   justify-content: space-between;
   background: var(--primary-color-pale);
+  position: sticky;
   z-index: 1;
+  top: 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -99,6 +103,7 @@ main {
   display: flex;
   padding: 20px 0;
   gap: 20px;
+  align-items: center;
 }
 
 .nav-list {
@@ -150,21 +155,28 @@ main {
 
 /* HEADER ELEMENTS */
 .header {
-  margin-bottom: 80px;
-  height: 100vh;
+  min-height: 90svh;
+  display: flex;
+  flex-direction: column;
 }
+
 .matini {
   margin: 0 auto;
   margin-bottom: 20px;
   border-radius: 50%;
 }
 
-.intro {
+.intro-wrapper {
+  flex: 1;
   display: flex;
   justify-content: center;
-  height: 80vh;
   align-items: center;
-  padding-top: 100px;
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .intro-name {
@@ -180,7 +192,7 @@ main {
 
 /* ABOUT */
 .about {
-  padding: 0 2rem;
+  padding: 0 9.5rem;
 }
 
 /* HOVERABLE - All purple tiles */
@@ -189,7 +201,6 @@ main {
   border-radius: 5px;
   background: var(--primary-color-light);
   box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 6px;
-  padding: 20px 30px;
   text-align: left;
 }
 .hoverable:hover {
@@ -197,11 +208,6 @@ main {
 }
 
 .hoverable > h2,
-.project-content > h2 {
-  font-size: 1.17rem;
-  margin-bottom: 5px;
-  font-weight: 700;
-}
 .hoverable > h3 {
   font-size: 1.1rem;
   margin-bottom: 5px;
@@ -214,20 +220,20 @@ main {
 }
 .hoverable > p,
 .hoverable > ul > li,
-.project-content > p {
+.project > p {
   font-size: 0.9rem;
   margin: 15px 0;
   font-weight: 300;
+  flex-grow: 1;
 }
 
 /* GRID SECTIONS - Experiences, Projects, Certifications, Languages */
 .with-grid {
   display: grid;
-  max-width: 1400px;
+  width: 80svw;
   justify-self: center;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin: 0 auto;
 }
 
 /* SKILLS */
@@ -278,18 +284,16 @@ main {
 }
 
 /* EXPERIENCES */
-.experiences {
-  padding: 0 7rem;
+.education-item,
+.experience {
+  padding: 1.5rem 2rem;
 }
 
 /* PROJECTS */
-.projects {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding: 0 5rem;
-}
-
 .project {
-  padding: 0px 30px 80px;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .preview-container {
@@ -298,7 +302,7 @@ main {
 
 .project-links {
   display: flex;
-  padding: 10px 0 20px;
+  padding: 0.5rem 0 2rem;
   justify-content: space-between;
 }
 
@@ -318,19 +322,18 @@ main {
 
 /* CERTIFICATIONS */
 .certifications {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 0 7rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .certification {
-  padding: 25px 0;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .certification > img {
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .certifications > .certification:nth-of-type(1) > img {
@@ -339,13 +342,17 @@ main {
 
 /* LANGUAGES */
 .languages {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 0 7rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.language {
+  padding: 1rem 3rem;
+  text-align: center;
 }
 
 /* Contact */
 .contact {
-  margin-bottom: 80px;
+  margin-bottom: 3.5rem;
 }
 
 .contact-item {
@@ -363,10 +370,12 @@ textarea {
 }
 
 .submit-btn {
-  padding: 10px 20px;
+  padding: 15px 20px;
   border-radius: 10px;
   border: 1px solid var(--primary-color-darkest);
   background: var(--primary-color-pale);
+  font-weight: 600;
+  color: var(--text-color);
 }
 
 .submit-btn:hover {
@@ -380,7 +389,6 @@ footer {
   background: var(--primary-color-dark);
   padding: 15px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  font-weight: 500;
 }
 
 /* MEDIA QUERIES FOR RESPONSIVENESS */
@@ -415,6 +423,8 @@ footer {
     margin-top: 5rem;
     margin-bottom: 2rem;
   }
+
+  .education,
   .experiences,
   .projects,
   .certifications,
