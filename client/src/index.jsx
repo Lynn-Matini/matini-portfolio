@@ -46,7 +46,7 @@ export function App() {
         <h1 id="education" className="fade-in-on-scroll">
           Education
         </h1>
-        <section className="education-item with-grid fade-in-on-scroll">
+        <section className="education with-grid fade-in-on-scroll">
           {education.map((ed) => {
             return <Education key={ed.id} {...ed} />;
           })}

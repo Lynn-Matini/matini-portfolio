@@ -32,6 +32,7 @@ function Contact() {
       },
     });
     setFormData({ name: '', email: '', message: '' });
+    console.log(formData);
   }
 
   return (
