@@ -3,12 +3,15 @@ import Hamburger from '../assets/hamburger.svg';
 import MatiniLogo from '../assets/matini-font2.png';
 
 import { useState } from 'preact/hooks';
+import { useTheme } from '../hooks/ThemeContext';
 
 function TopNav({ handleScroll }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { darkMode, toggleTheme } = useTheme();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    console.log(isMenuOpen);
   };
   return (
     <nav className="nav">
@@ -35,7 +38,7 @@ function TopNav({ handleScroll }) {
           width="40px"
           height="66px"
           className="sun"
-          onClick={() => alert('Clicked!')}
+          onClick={toggleTheme}
         />
         <img
           src={Hamburger}
