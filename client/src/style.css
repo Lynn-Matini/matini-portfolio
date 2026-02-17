@@ -21,6 +21,7 @@
   --primary-color-dark: #b8b8ff;
   --primary-color-darker: #9381ff;
   --primary-color-darkest: #9b9eff;
+  --miscellaneous: #5458ff;
 }
 
 * {
@@ -50,10 +51,6 @@ main {
   margin: 0;
   text-align: center;
   font-family: var(--font-family);
-}
-
-.light {
-  /* background-color: white; */
 }
 
 /* MULTIPLE ELEMENTS AT ONCE */
@@ -399,7 +396,7 @@ textarea {
 }
 
 .dark .submit-btn {
-  background: #5458ff;
+  background: #4c5897;
 }
 
 .submit-btn:hover {
@@ -417,7 +414,7 @@ footer {
 }
 
 .dark footer {
-  background: #4f23c0;
+  background: var(--miscellaneous);
 }
 
 /* MEDIA QUERIES FOR RESPONSIVENESS */
