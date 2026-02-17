@@ -1,4 +1,5 @@
 import Sun from '../assets/sun.svg';
+import Moon from '../assets/moon.svg';
 import Hamburger from '../assets/hamburger.svg';
 import MatiniLogo from '../assets/matini-font2.png';
 
@@ -34,7 +35,7 @@ function TopNav({ handleScroll }) {
       </ul>
       <div className="rightnav-icons">
         <img
-          src={Sun}
+          src={darkMode ? Moon : Sun}
           width="40px"
           height="66px"
           className="sun"

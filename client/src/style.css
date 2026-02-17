@@ -1,4 +1,5 @@
 :root {
+  /* LIGHT MODE */
   --primary-color: #aeadf0;
   --primary-color-pale: #f3e2f3;
   --primary-color-light: #d8dcff;
@@ -9,6 +10,17 @@
   --secondary-color: #f0f0f0;
   --text-color: #222222;
   --font-family: 'Cascadia Code', sans-serif;
+}
+
+.dark {
+  --primary-color-pale: #16161e;
+  --primary-color-light: #1c1c2b;
+  --primary-color-lighter: #0f0f14;
+  --secondary-color: #12121a;
+  --text-color: #e0e0ed;
+  --primary-color-dark: #b8b8ff;
+  --primary-color-darker: #9381ff;
+  --primary-color-darkest: #9b9eff;
 }
 
 * {
@@ -24,6 +36,9 @@ body {
   font-size: 0.8rem;
   color: var(--text-color);
   scroll-behavior: smooth;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 ::-webkit-scrollbar {
@@ -37,12 +52,8 @@ main {
   font-family: var(--font-family);
 }
 
-.dark {
-  background-color: #222222;
-}
-
 .light {
-  background-color: white;
+  /* background-color: white; */
 }
 
 /* MULTIPLE ELEMENTS AT ONCE */
@@ -144,6 +155,11 @@ main {
   cursor: pointer;
 }
 
+.dark .matini-logo img {
+  filter: invert(93%) sepia(5%) saturate(885%) hue-rotate(202deg)
+    brightness(105%) contrast(88%);
+}
+
 /* HEADER ELEMENTS */
 .header {
   min-height: 90svh;
@@ -231,10 +247,15 @@ main {
 
 /* SKILLS */
 .skills {
+  /* background-color: var(--primary-color-light); */
   background-color: #dfdbe5;
   background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   padding: 15px 0;
   width: 100%;
+}
+
+.dark .skills {
+  filter: brightness(0.75) contrast(1.5);
 }
 
 .carousel-wrapper {
@@ -316,6 +337,12 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+.dark .certifications .certification:nth-of-type(2) img,
+.dark .certifications .certification:nth-of-type(3) img {
+  filter: invert(93%) sepia(5%) saturate(885%) hue-rotate(202deg)
+    brightness(105%) contrast(88%);
+}
+
 .certification {
   padding: 2rem 0;
   display: flex;
@@ -371,6 +398,10 @@ textarea {
   color: var(--text-color);
 }
 
+.dark .submit-btn {
+  background: #5458ff;
+}
+
 .submit-btn:hover {
   background: var(--primary-color-dark);
   font-weight: bold;
@@ -382,6 +413,11 @@ footer {
   background: var(--primary-color-dark);
   padding: 15px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+}
+
+.dark footer {
+  background: #4f23c0;
 }
 
 /* MEDIA QUERIES FOR RESPONSIVENESS */
